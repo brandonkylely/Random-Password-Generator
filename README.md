@@ -10,9 +10,11 @@ Follow the prompts to confirm whether or not you would like uppercase letters, l
 
 ## Example Screenshot
 
+![site screenshot](deployed-screenshot.jpg)
 
 ## Site URL
 
+https://brandonkylely.github.io/hw3-Random-Password-Generator/
 
 ## Contact
 
