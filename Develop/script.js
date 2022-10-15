@@ -19,9 +19,9 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // prompt for password criteria: upper, lower, number, special
-var isUppercase = prompt("Would you like uppercase letters in your password?")
-var isLowercase = prompt("Would you like lowercase letters in your password?")
-var isNumber = prompt("Would you like numbers in your password?")
-var isSpecial = prompt("Would you like special characters in your password?")
+var isUppercase = confirm("Would you like uppercase letters in your password?")
+var isLowercase = confirm("Would you like lowercase letters in your password?")
+var isNumber = confirm("Would you like numbers in your password?")
+var isSpecial = confirm("Would you like special characters in your password?")
 // prompt for password length: 8-128
 var passwordLength = prompt("How many characters would you like your password to be? (8-128)")
