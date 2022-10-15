@@ -45,6 +45,14 @@ function generatePassword () {
   };
 
   // console.log(includedCharacters);
+
+  var createdPassword = [];
+  // i =1 to get same # as passwordLength
+  if (i = 1, i < passwordLength, i++) {
+    // randomize letters from includedCharacters by using random numbers to choose array value
+    createdPassword = createdPassword + 
+  }
+  // console.log(createdPassword)
 }
 
 writePassword()
