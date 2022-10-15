@@ -21,27 +21,30 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword () { 
 // prompt for password criteria: upper, lower, number, special
-  var isUppercase = confirm("Would you like uppercase letters in your password?")
-  var isLowercase = confirm("Would you like lowercase letters in your password?")
-  var isNumber = confirm("Would you like numbers in your password?")
-  var isSpecial = confirm("Would you like special characters in your password?")
+  var isUppercase = confirm("Would you like uppercase letters in your password?");
+  var isLowercase = confirm("Would you like lowercase letters in your password?");
+  var isNumber = confirm("Would you like numbers in your password?");
+  var isSpecial = confirm("Would you like special characters in your password?");
 // prompt for password length: 8-128
-  var passwordLength = prompt("How many characters would you like your password to be? (8-128)")
+  var passwordLength = prompt("How many characters would you like your password to be? (8-128)");
 
 // use if statement to add criteria arrays to passwordText
+  var includedCharacters = [];
 
   if (isUppercase) {
-    uppercase.concat(passwordText)
-  }
+    includedCharacters = includedCharacters.concat(uppercase)
+  };
   if (isLowercase) {
-    lowercase.concat(passwordText)
-  }
+    includedCharacters = includedCharacters.concat(lowercase)
+  };
   if (isNumber) {
-    numbers.concat(passwordText)
-  }
+    includedCharacters = includedCharacters.concat(numbers)
+  };
   if (isNumber) {
-    special.concat(passwordText)
-  }
+    includedCharacters = includedCharacters.concat(special)
+  };
+
+  // console.log(includedCharacters);
 }
 
-generatePassword()
+writePassword()
