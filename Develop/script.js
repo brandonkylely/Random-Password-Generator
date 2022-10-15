@@ -12,7 +12,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  
 }
 
 // Add event listener to generate button
@@ -20,15 +20,17 @@ generateBtn.addEventListener("click", writePassword);
 
 
 function generatePassword () { 
-// prompt for password criteria: upper, lower, number, special
+  // prompt for password criteria: upper, lower, number, special
   var isUppercase = confirm("Would you like uppercase letters in your password?");
   var isLowercase = confirm("Would you like lowercase letters in your password?");
   var isNumber = confirm("Would you like numbers in your password?");
   var isSpecial = confirm("Would you like special characters in your password?");
-// prompt for password length: 8-128
+  // prompt for password length: 8-128
   var passwordLength = prompt("How many characters would you like your password to be? (8-128)");
 
-// use if statement to add criteria arrays to passwordText
+  // TO DO: need if statement to ensure user enters correct length
+
+  // use if statement to add criteria arrays to passwordText
   var includedCharacters = [];
 
   if (isUppercase) {
@@ -40,23 +42,24 @@ function generatePassword () {
   if (isNumber) {
     includedCharacters = includedCharacters.concat(numbers)
   };
-  if (isNumber) {
+  if (isSpecial) {
     includedCharacters = includedCharacters.concat(special)
   };
 
   // console.log(includedCharacters);
 
   function getRandomInt(min, max) {
-    return Math.floor(Math.random() * max);
+    min = Math.ceil(0);
+    max = Math.floor(includedCharacters.length);
+    return Math.floor(Math.random() * (max - min) + min);
   }
 
-  var createdPassword = "";
+  var password = "";
   // i =1 to get same # as passwordLength
   if (i = 1, i < passwordLength, i++) {
     // randomize letters from includedCharacters by using random numbers to choose array value
-    createdPassword = createdPassword + includedCharacters[getRandomInt(0, passwordLength)]
+    password = password + includedCharacters[getRandomInt(0, includedCharacters.length)]
   }
-  console.log(createdPassword)
+  return(password)
 }
 
-writePassword()
