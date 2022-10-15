@@ -12,7 +12,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  
+
 }
 
 // Add event listener to generate button
@@ -28,38 +28,42 @@ function generatePassword () {
   // prompt for password length: 8-128
   var passwordLength = prompt("How many characters would you like your password to be? (8-128)");
 
-  // TO DO: need if statement to ensure user enters correct length
+  // if statement to ensure user enters correct length
+  if (passwordLength < 8 || passwordLength > 129) {
+    passwordLength = prompt("How many characters would you like your password to be? Please enter a valid number. (8-128)");
+  } else {
 
-  // use if statement to add criteria arrays to passwordText
-  var includedCharacters = [];
+    // use if statement to add criteria arrays to passwordText
+    var includedCharacters = [];
 
-  if (isUppercase) {
-    includedCharacters = includedCharacters.concat(uppercase)
-  };
-  if (isLowercase) {
-    includedCharacters = includedCharacters.concat(lowercase)
-  };
-  if (isNumber) {
-    includedCharacters = includedCharacters.concat(numbers)
-  };
-  if (isSpecial) {
-    includedCharacters = includedCharacters.concat(special)
-  };
+    if (isUppercase) {
+      includedCharacters = includedCharacters.concat(uppercase)
+    };
+    if (isLowercase) {
+      includedCharacters = includedCharacters.concat(lowercase)
+    };
+    if (isNumber) {
+      includedCharacters = includedCharacters.concat(numbers)
+    };
+    if (isSpecial) {
+      includedCharacters = includedCharacters.concat(special)
+    };
 
-  // console.log(includedCharacters);
+    // console.log(includedCharacters);
 
-  function getRandomInt(min, max) {
-    min = Math.ceil(0);
-    max = Math.floor(includedCharacters.length);
-    return Math.floor(Math.random() * (max - min) + min);
+    function getRandomInt(min, max) {
+      min = Math.ceil(0);
+      max = Math.floor(includedCharacters.length);
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    var password = "";
+    // i =1 to get same # as passwordLength
+    if (i = 1, i < passwordLength, i++) {
+      // randomize letters from includedCharacters by using random numbers to choose array value
+      password = password + includedCharacters[getRandomInt(0, includedCharacters.length)]
+    }
+    return(password)
   }
-
-  var password = "";
-  // i =1 to get same # as passwordLength
-  if (i = 1, i < passwordLength, i++) {
-    // randomize letters from includedCharacters by using random numbers to choose array value
-    password = password + includedCharacters[getRandomInt(0, includedCharacters.length)]
-  }
-  return(password)
 }
 
